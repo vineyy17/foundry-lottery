@@ -13,3 +13,5 @@ docs/
 # Dotenv file
 .env
 foundry.toml
+.github/workflows/
+
