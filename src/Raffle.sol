@@ -137,7 +137,8 @@ contract Raffle is VRFConsumerBaseV2Plus {
         s_raffleState = RaffleState.CALCULATING;
 
         // Get our random number
-        uint256 requestId = s_vrfCoordinator.requestRandomWords(
+        // uint256 requestId =
+        s_vrfCoordinator.requestRandomWords(
             VRFV2PlusClient.RandomWordsRequest({
                 keyHash: i_keyHash,
                 subId: i_subscriptionId,
@@ -154,7 +155,7 @@ contract Raffle is VRFConsumerBaseV2Plus {
 
     // CEI: Checks, Effects, Interactions Pattern
     function fulfillRandomWords(
-        uint256 requestId,
+        uint256 /*requestId*/,
         uint256[] calldata randomWords
     ) internal virtual override {
         // Checks
