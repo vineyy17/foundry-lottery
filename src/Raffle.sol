@@ -27,7 +27,7 @@ import {VRFV2PlusClient} from "@chainlink/contracts/src/v0.8/vrf/dev/libraries/V
 
 /**
  * @title A sample Raffle contract
- * @author Patrick Collins
+ * @author Divine Charles
  * @notice This contract is for creating a sample raffle
  * @dev Implements Chainlink VRFv2.5
  */
