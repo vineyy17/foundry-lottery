@@ -15,4 +15,5 @@ docs/
 .env
 foundry.toml
 .github/workflows/
+coverage.txt
 
