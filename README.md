@@ -1,66 +1,100 @@
-## Foundry
+# Raffle Project
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This project implements a decentralized raffle system using Chainlink VRFv2.5 for verifiable randomness.
 
-Foundry consists of:
+## Features
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- Enter raffle with ETH
+- Automated winner selection using Chainlink VRF and Automation
+- Configurable entrance fee and raffle interval
+- Fully decentralized and transparent
 
-## Documentation
+## Technologies
 
-https://book.getfoundry.sh/
+- Solidity ^0.8.19
+- Chainlink VRFv2.5
+- Foundry for development and testing
 
-## Usage
+## Setup
 
-### Build
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   make install
+   ```
 
-```shell
-$ forge build
+## Building
+
+To build the project, run:
+
+```bash
+make build
 ```
 
-### Test
+## Testing
 
-```shell
-$ forge test
+Run tests with:
+
+```bash
+make test
 ```
 
-### Format
+To create a gas snapshot:
 
-```shell
-$ forge fmt
+```bash
+make snapshot
 ```
 
-### Gas Snapshots
+## Deployment
 
-```shell
-$ forge snapshot
+To deploy the contract:
+
+```bash
+make deploy
 ```
 
-### Anvil
+For network-specific deployment (e.g., Sepolia), use:
 
-```shell
-$ anvil
+```bash
+make deploy ARGS="--network sepolia"
 ```
 
-### Deploy
+## Chainlink VRF Setup
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+1. Create a VRF Subscription:
+   ```bash
+   make createSubscription
+   ```
+
+2. Fund the subscription:
+   ```bash
+   make fundSubscription
+   ```
+
+3. Add the contract as a consumer:
+   ```bash
+   make addConsumer
+   ```
+
+## Development Commands
+
+- Format code: `make format`
+- Update dependencies: `make update`
+- Run local Anvil chain: `make anvil`
+
+## Environment Setup
+
+Create a `.env` file in the root directory with the following variables:
+
+```
+SEPOLIA_RPC_URL=your_sepolia_rpc_url
+ETHERSCAN_API_KEY=your_etherscan_api_key
 ```
 
-### Cast
+## Contributing
 
-```shell
-$ cast <subcommand>
-```
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-### Help
+## License
 
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+This project is licensed under the MIT License.
